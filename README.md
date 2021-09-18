@@ -1,2 +1,2 @@
 # FoodOrderApp2021
-Ứng dụng đặt món ăn online
+Ứng dụng đặt món ăn online trên Android
