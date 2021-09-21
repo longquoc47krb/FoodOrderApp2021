@@ -23,7 +23,7 @@
 
 
     <string name="menu_orders">Quản lý đơn hàng</string>
-    <string name="menu_categories">Quản lý danh mục</string>
+    <string name="menu_staff">Quản lý nhân viên</string>
     <string name="menu_foods">Quản lý món ăn</string>
     <string name="menu_chinhsuathongtin">Chỉnh sửa thông tin</string>
     <string name="menu_doimatkhau">Đổi mật khẩu</string>
