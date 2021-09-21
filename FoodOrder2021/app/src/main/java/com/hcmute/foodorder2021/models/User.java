@@ -8,6 +8,24 @@ public class User {
     private String Email;
     private String Address;
     private String role;
+    private String image;
+
+    public User(String userName, String phone, String password, String fullname, String email, String address, String role, String image, Restaurant restaurant) {
+        UserName = userName;
+        Phone = phone;
+        Password = password;
+        Fullname = fullname;
+        Email = email;
+        Address = address;
+        this.role = role;
+        this.image = image;
+        this.restaurant = restaurant;
+    }
+
+    public User(String image) {
+        this.image = image;
+    }
+
     private Restaurant restaurant;
     public User(){
 
