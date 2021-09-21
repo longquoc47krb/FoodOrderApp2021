@@ -43,6 +43,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.hcmute.foodorder2021.models.Restaurant;
+import com.hcmute.foodorder2021.models.User;
 
 import java.util.HashMap;
 import java.util.regex.Pattern;
@@ -57,9 +58,9 @@ public class DangKy extends AppCompatActivity {
     Button btnDangKy, btnDangNhap;
     public String role, uId;
     private FirebaseAuth mAuth;
-    private String DEFAULT_IMAGE_URL = "https://firebasestorage.googleapis.com/v0/b/food-order-app-hcmute.appspot.com/o/profile-anonymous-face-icon-gray-silhouette-person-male-default-avatar-photo-placeholder-isolated-white-background-profile-107327860.jpg?alt=media&token=07fce3de-7f4f-4d0f-96a6-6e7f6f83f72b";
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRootRef = database.getReference();
+    DatabaseReference userRef = myRootRef.child("User");
     DatabaseReference restaurantRef = myRootRef.child("Restaurants");
     ProgressBar progr;
 
@@ -211,10 +212,7 @@ public class DangKy extends AppCompatActivity {
             pwdMatch = true;
         }
         if (isNameValid && isEmailValid && isPhoneValid && isPasswordValid && pwdMatch) {
-            if(role.equals("admin"))
                 showDialogChooseAvatr(email,password);
-            else
-                signUp(email,password);
 
         }
     }
@@ -225,8 +223,6 @@ public class DangKy extends AppCompatActivity {
         password = edtPassword.getText().toString();
         String userName = edtUserName.getText().toString();
         email = edtEmail.getText().toString();
-        String finalEmail = email;
-        String finalPassword = password;
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -238,7 +234,12 @@ public class DangKy extends AppCompatActivity {
                                         if(imgUri!=null)
                                         {
                                             StorageReference storageReference;
-                                            storageReference = FirebaseStorage.getInstance().getReference("Restaurant_Image");
+                                            if(role == "admin"){
+                                                storageReference = FirebaseStorage.getInstance().getReference("Restaurant_Image");
+                                            }
+                                            else{
+                                                storageReference = FirebaseStorage.getInstance().getReference("User_Image");
+                                            }
                                             StorageReference fileRef = storageReference.child(System.currentTimeMillis()
                                                     +"."+getFileExtension(imgUri));
                                             fileRef.putFile(imgUri).addOnSuccessListener(taskSnapshot -> {
@@ -254,8 +255,8 @@ public class DangKy extends AppCompatActivity {
                                                             hashMap.put("password",edtPassword.getText().toString());
                                                             FirebaseUser currentUser = mAuth.getCurrentUser();
                                                             uId = currentUser.getUid();
-                                                            if(role.equals("admin")){
-                                                                Restaurant restaurant = new Restaurant("default",uri.toString(),fullName);
+                                                            if(role.equals("admin")) {
+                                                                Restaurant restaurant = new Restaurant("default", uri.toString(), fullName);
                                                                 restaurantRef.child(uId).setValue(restaurant);
                                                             }
                                                             DatabaseReference df = FirebaseDatabase.getInstance().getReference().child("User");
