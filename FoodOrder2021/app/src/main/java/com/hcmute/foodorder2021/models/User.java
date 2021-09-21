@@ -10,17 +10,6 @@ public class User {
     private String role;
     private String image;
 
-    public User(String userName, String phone, String password, String fullname, String email, String address, String role, String image, Restaurant restaurant) {
-        UserName = userName;
-        Phone = phone;
-        Password = password;
-        Fullname = fullname;
-        Email = email;
-        Address = address;
-        this.role = role;
-        this.image = image;
-        this.restaurant = restaurant;
-    }
 
     public User(String image) {
         this.image = image;
@@ -34,6 +23,15 @@ public class User {
     public User(String userName, String password) {
         UserName = userName;
         Password = password;
+    }
+    //shipper
+
+    public User(String userName, String phone, String password, String role, Restaurant restaurant) {
+        UserName = userName;
+        Phone = phone;
+        Password = password;
+        this.role = role;
+        this.restaurant = restaurant;
     }
 
     //customer

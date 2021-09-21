@@ -230,7 +230,7 @@
             android:layout_marginTop="24dp"
             android:layout_width="match_parent"
             android:layout_height="25dp"
-            android:weightSum="2"
+            android:weightSum="3"
             android:orientation="horizontal">
 
             <RadioButton
@@ -249,6 +249,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Người bán"
+                android:checked="false"
+                android:textColor="#000"
+                android:textSize="16dp"
+                android:layout_weight="1"
+                android:onClick="onRadioButtonClicked"/>
+            <RadioButton
+                android:id="@+id/radioBtnShipper"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Shipper"
                 android:checked="false"
                 android:textColor="#000"
                 android:textSize="16dp"

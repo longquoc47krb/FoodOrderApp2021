@@ -54,15 +54,13 @@ public class DangKy extends AppCompatActivity {
     RadioGroup Vaitro;
     Toolbar toolbar;
     LinearLayout layout;
-    RadioButton radioBtnNguoiMua, radioBtnNguoiBan;
+    RadioButton radioBtnNguoiMua, radioBtnNguoiBan, radioBtnShipper;
     Button btnDangKy, btnDangNhap;
     public String role, uId;
     private FirebaseAuth mAuth;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRootRef = database.getReference();
-    DatabaseReference userRef = myRootRef.child("User");
     DatabaseReference restaurantRef = myRootRef.child("Restaurants");
-    ProgressBar progr;
 
     Uri imgUri = null;
     Button btnChooseImage;
@@ -135,6 +133,7 @@ public class DangKy extends AppCompatActivity {
         Vaitro = findViewById(R.id.vaitro);
         radioBtnNguoiBan = findViewById(R.id.radioBtnNguoiBan);
         radioBtnNguoiMua = findViewById(R.id.radioBtnNguoiMua);
+        radioBtnShipper = findViewById(R.id.radioBtnShipper);
         layout = findViewById(R.id.dangky);
 
     }
@@ -151,6 +150,10 @@ public class DangKy extends AppCompatActivity {
             case R.id.radioBtnNguoiBan:
                 if (checked)
                     role = "admin";
+                break;
+            case R.id.radioBtnShipper:
+                if (checked)
+                    role = "shipper";
                 break;
             default: role = "customer";
         }
@@ -237,6 +240,9 @@ public class DangKy extends AppCompatActivity {
                                             if(role == "admin"){
                                                 storageReference = FirebaseStorage.getInstance().getReference("Restaurant_Image");
                                             }
+                                            else if(role == "shipper"){
+                                                storageReference = FirebaseStorage.getInstance().getReference("Shipper_Image");
+                                            }
                                             else{
                                                 storageReference = FirebaseStorage.getInstance().getReference("User_Image");
                                             }
@@ -258,6 +264,9 @@ public class DangKy extends AppCompatActivity {
                                                             if(role.equals("admin")) {
                                                                 Restaurant restaurant = new Restaurant("default", uri.toString(), fullName);
                                                                 restaurantRef.child(uId).setValue(restaurant);
+                                                            }
+                                                            else if(role.equals("shipper")){
+                                                                User shipper = new User(userName, phone, edtPassword.getText().toString(),role,null);
                                                             }
                                                             DatabaseReference df = FirebaseDatabase.getInstance().getReference().child("User");
                                                             df.child(uId).setValue(hashMap);
