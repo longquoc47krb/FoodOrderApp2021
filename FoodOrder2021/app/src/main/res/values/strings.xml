@@ -29,6 +29,13 @@
     <string name="menu_doimatkhau">Đổi mật khẩu</string>
     <string name="menu_dangxuat">Đăng xuất</string>
     <string name="title_activity_change_password">ChangePasswordActivity</string>
+
+    <string-array name="danhmuc">
+        <item>Bữa sáng</item>
+        <item>Bữa trưa</item>
+        <item>Bữa tối</item>
+        <item>Tráng miệng</item>
+    </string-array>
     <!--
     This string is used for square devices and overridden by hello_world in
     values-round/strings.xml for round devices.
