@@ -1,4 +1,4 @@
-package com.hcmute.foodorder2021;
+package com.hcmute.foodorder2021.controller;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -29,6 +29,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.hcmute.foodorder2021.R;
+import com.hcmute.foodorder2021.controller.AdminController.AdminMain;
 import com.hcmute.foodorder2021.models.Singleton.Singleton;
 import com.hcmute.foodorder2021.models.User;
 
@@ -141,13 +143,13 @@ public class DangNhap extends AppCompatActivity {
                 Singleton.getInstance().setUser(user);
                 Log.i("DangNhap","Đang đăng nhập " + user.getFullname());
                 if(user.getRole().equals("admin")){
-                    //Snackbar.make(layout,"Đăng nhập thành công: Người bán", BaseTransientBottomBar.LENGTH_LONG).setBackgroundTint(R.color.colorPrimary).show();
-              //      startActivity(new Intent(DangNhap.this, AdminMain.class));
+                    Snackbar.make(layout,"Đăng nhập thành công: Người bán", BaseTransientBottomBar.LENGTH_LONG).setBackgroundTint(R.color.colorPrimary).show();
+                    startActivity(new Intent(DangNhap.this, AdminMain.class));
                     progressDialog.dismiss();
                 }
                 else{
-                    //Snackbar.make(layout,"Đăng nhập thành công: Khách hàng", BaseTransientBottomBar.LENGTH_LONG).setBackgroundTint(R.color.colorPrimary).show();
-         //           startActivity(new Intent(DangNhap.this, CustomerMain.class));
+                    Snackbar.make(layout,"Đăng nhập thành công: Khách hàng", BaseTransientBottomBar.LENGTH_LONG).setBackgroundTint(R.color.colorPrimary).show();
+                    startActivity(new Intent(DangNhap.this, CustomerMain.class));
                     progressDialog.dismiss();
                 }
 
