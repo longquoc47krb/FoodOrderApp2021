@@ -36,6 +36,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.hcmute.foodorder2021.R;
+import com.hcmute.foodorder2021.common.Utils;
 import com.hcmute.foodorder2021.models.Restaurant;
 import com.hcmute.foodorder2021.models.User;
 
@@ -55,6 +56,8 @@ public class DangKy extends AppCompatActivity {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRootRef = database.getReference();
     DatabaseReference restaurantRef = myRootRef.child("Restaurants");
+    DatabaseReference shipperRef = myRootRef.child("Shippers");
+    DatabaseReference userRef = myRootRef.child("User");
 
     Uri imgUri = null;
     Button btnChooseImage;
@@ -246,49 +249,66 @@ public class DangKy extends AppCompatActivity {
                                                 fileRef.getDownloadUrl()
                                                         .addOnSuccessListener(uri -> {
                                                             HashMap<String, String> hashMap = new HashMap<>();
-                                                            hashMap.put("fullName", fullName);
                                                             hashMap.put("userName",userName);
-                                                            hashMap.put("address", address);
                                                             hashMap.put("phone",phone);
-                                                            hashMap.put("email",edtEmail.getText().toString());
-                                                            hashMap.put("role",role);
                                                             hashMap.put("password",edtPassword.getText().toString());
+                                                            hashMap.put("fullName", fullName);
+                                                            hashMap.put("email",edtEmail.getText().toString());
+                                                            hashMap.put("address", address);
+                                                            hashMap.put("role",role);
+                                                            hashMap.put("image",uri.toString());
                                                             FirebaseUser currentUser = mAuth.getCurrentUser();
                                                             uId = currentUser.getUid();
                                                             if(role.equals("admin")) {
-                                                                Restaurant restaurant = new Restaurant("default", uri.toString(), fullName);
+                                                                Restaurant restaurant = new Restaurant(uId, uri.toString(), fullName);
                                                                 restaurantRef.child(uId).setValue(restaurant);
                                                             }
-                                                            else if(role.equals("shipper")){
-                                                                User shipper = new User(userName, phone, edtPassword.getText().toString(),role,null);
+                                                            if(role.equals("shipper")){
+                                                                User shipper = new User(userName, phone, edtPassword.getText().toString(), fullName, edtEmail.getText().toString(), address, role, uri.toString(), null);
+                                                                shipperRef.child(uId).setValue(shipper);
+                                                                userRef.child(uId).setValue(shipper);
                                                             }
                                                             DatabaseReference df = FirebaseDatabase.getInstance().getReference().child("User");
                                                             df.child(uId).setValue(hashMap);
-                                                            Snackbar.make(layout, "Đăng ký thành công", BaseTransientBottomBar.LENGTH_SHORT).show();
-                                                            SendusertoLoginActivity();
+                                                            int secs = 1; // Delay in seconds
+
+                                                            Utils.delay(secs, new Utils.DelayCallback() {
+                                                                @Override
+                                                                public void afterDelay() {
+                                                                    Snackbar.make(layout, "Đăng ký thành công", BaseTransientBottomBar.LENGTH_SHORT).show();
+                                                                }
+                                                            });
+                                                         //   SendUser2LoginActivity();
                                                         });
                                             });
                                         }
                                         else
                                         {
                                             HashMap<String, String> hashMap = new HashMap<>();
-                                            hashMap.put("fullName", fullName);
                                             hashMap.put("userName",userName);
-                                            hashMap.put("address", address);
                                             hashMap.put("phone",phone);
-                                            hashMap.put("email",edtEmail.getText().toString());
-                                            hashMap.put("role",role);
                                             hashMap.put("password",edtPassword.getText().toString());
+                                            hashMap.put("fullName", fullName);
+                                            hashMap.put("email",edtEmail.getText().toString());
+                                            hashMap.put("address", address);
+                                            hashMap.put("role",role);
+                                            hashMap.put("image","default");
                                             FirebaseUser currentUser = mAuth.getCurrentUser();
                                             uId = currentUser.getUid();
                                             if(role.equals("admin")){
                                                 Restaurant restaurant = new Restaurant("default",fullName);
                                                 restaurantRef.child(uId).setValue(restaurant);
                                             }
+                                            if(role.equals("shipper")){
+                                                User shipper = new User(userName, phone, edtPassword.getText().toString(), fullName, edtEmail.getText().toString(), address, role,"default", null);
+                                                shipperRef.child(uId).setValue(shipper);
+                                                userRef.child(uId).setValue(shipper);
+
+                                            }
                                             DatabaseReference df = FirebaseDatabase.getInstance().getReference().child("User");
                                             df.child(uId).setValue(hashMap);
                                             Snackbar.make(layout, "Đăng ký thành công", BaseTransientBottomBar.LENGTH_SHORT).show();
-                                            SendusertoLoginActivity();
+                                           // SendUser2LoginActivity();
                                         }
 
 
@@ -309,8 +329,6 @@ public class DangKy extends AppCompatActivity {
             }
         });
     }
-
-
     private void showDialogChooseAvatr(String email, String password) {
         Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.dialog_choose_avatar);
@@ -358,7 +376,7 @@ public class DangKy extends AppCompatActivity {
         }
     }
 
-    private void SendusertoLoginActivity() {
+    private void SendUser2LoginActivity() {
         Intent intent = new Intent(DangKy.this,DangNhap.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);

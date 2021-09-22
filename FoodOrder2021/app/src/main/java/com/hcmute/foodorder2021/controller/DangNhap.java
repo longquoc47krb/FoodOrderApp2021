@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -31,6 +32,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.hcmute.foodorder2021.R;
 import com.hcmute.foodorder2021.controller.AdminController.AdminMain;
+import com.hcmute.foodorder2021.controller.CustomerController.CustomerMain;
+import com.hcmute.foodorder2021.controller.ShipperController.ShipperMain;
 import com.hcmute.foodorder2021.models.Singleton.Singleton;
 import com.hcmute.foodorder2021.models.User;
 
@@ -144,12 +147,21 @@ public class DangNhap extends AppCompatActivity {
                 Log.i("DangNhap","Đang đăng nhập " + user.getFullname());
                 if(user.getRole().equals("admin")){
                     Snackbar.make(layout,"Đăng nhập thành công: Người bán", BaseTransientBottomBar.LENGTH_LONG).setBackgroundTint(R.color.colorPrimary).show();
-                    startActivity(new Intent(DangNhap.this, AdminMain.class));
+                   startActivity(new Intent(DangNhap.this, AdminMain.class));
+                    progressDialog.dismiss();
+                    Toast.makeText(DangNhap.this,"Hello A",Toast.LENGTH_SHORT).show();
+
+                }
+                else if(user.getRole().equals("shipper")) {
+                    Snackbar.make(layout,"Đăng nhập thành công: Shipper", BaseTransientBottomBar.LENGTH_LONG).setBackgroundTint(R.color.colorPrimary).show();
+                    startActivity(new Intent(DangNhap.this, ShipperMain.class));
+                    Toast.makeText(DangNhap.this,"Hello S",Toast.LENGTH_SHORT).show();
                     progressDialog.dismiss();
                 }
                 else{
                     Snackbar.make(layout,"Đăng nhập thành công: Khách hàng", BaseTransientBottomBar.LENGTH_LONG).setBackgroundTint(R.color.colorPrimary).show();
                     startActivity(new Intent(DangNhap.this, CustomerMain.class));
+                    Toast.makeText(DangNhap.this,"Hello C",Toast.LENGTH_SHORT).show();
                     progressDialog.dismiss();
                 }
 
