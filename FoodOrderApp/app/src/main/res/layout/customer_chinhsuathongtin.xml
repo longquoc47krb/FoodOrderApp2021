@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+    <LinearLayout
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:background="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="66dp">
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/topAppBar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:title="Chỉnh sửa thông tin"
+                app:titleTextAppearance="@style/ToolbarTheme"
+                android:background="@color/colorPrimary"
+                app:titleTextColor="#fff"
+                app:navigationIcon="@drawable/ic_baseline_arrow_back"
+                style="@style/ToolbarTheme"
+                />
+        </com.google.android.material.appbar.AppBarLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/txtFullName"
+            android:layout_width="369dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="43dp"
+            android:text="Tên người dùng"
+            android:textColor="#000000"
+            android:textSize="30dp" />
+
+        <EditText
+            android:id="@+id/edtTenNguoiDung"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtFullName"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/textbox_outline"
+            android:ems="10"
+            android:inputType="text"
+            android:paddingHorizontal="16dp"
+            android:textColor="@color/black"
+            android:textSize="30dp">
+
+            <requestFocus />
+        </EditText>
+
+        <TextView
+            android:id="@+id/txtUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edtTenNguoiDung"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:text="Tên đăng nhập"
+            android:textColor="#000000"
+            android:textSize="30dp" />
+
+        <EditText
+            android:id="@+id/edtTenDangNhap"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtUsername"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/textbox_outline"
+            android:ems="10"
+            android:inputType="text"
+            android:paddingHorizontal="16dp"
+            android:textColor="@color/black"
+            android:textSize="30sp"></EditText>
+
+        <TextView
+            android:id="@+id/txtPhoneNumber"
+            android:layout_width="369dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edtTenDangNhap"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:text="Số điện thoại"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <EditText
+            android:id="@+id/edtSoDienThoai"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtPhoneNumber"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/textbox_outline"
+            android:ems="10"
+            android:inputType="none"
+            android:paddingHorizontal="16dp"
+            android:textColor="@color/black"
+            android:textSize="30sp"></EditText>
+
+        <TextView
+            android:id="@+id/txtAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edtSoDienThoai"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:text="Địa chỉ"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <EditText
+            android:id="@+id/edtDiaChi"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtAddress"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/textbox_outline"
+            android:ems="10"
+            android:inputType="none"
+            android:paddingHorizontal="16dp"
+            android:textColor="@color/black"
+            android:textSize="30sp"></EditText>
+
+        <Button
+            android:id="@+id/btnSua"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edtDiaChi"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/btn"
+            android:enabled="false"
+            android:shadowColor="#000000"
+            android:text="Sửa"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:textSize="24sp" />
+    </RelativeLayout>
+</LinearLayout>

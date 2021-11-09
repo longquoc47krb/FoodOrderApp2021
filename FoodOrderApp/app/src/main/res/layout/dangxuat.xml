@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    android:background="@drawable/btn"
+    android:backgroundTint="#FFFFFF"
+    android:gravity="center"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:gravity="center"
+        android:text="Bạn có muốn đăng xuất?"
+        android:textColor="#2B2B2B"
+        android:textSize="26dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnXacNhanDX"
+            android:layout_width="156dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn"
+            android:gravity="center"
+            android:text="Đăng xuất"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/btnHuyDX"
+            android:layout_width="156dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:background="@drawable/btn"
+            android:gravity="center"
+            android:text="Hủy"
+            android:textAlignment="center"
+            app:backgroundTint="#FFC107" />
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:weightSum="10">
+
+    <TextView
+        android:id="@+id/Giohang_TenMon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="16dp"
+        android:textColor="#0B0A0A"
+        android:layout_weight="5"/>
+
+    <Button
+        android:id="@+id/buttonSub"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:background="@drawable/ic_sub"
+        android:textColor="#2D2F31"
+        android:textSize="8dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/Giohang_Soluong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00"
+        android:textColor="#0B0A0A"
+        android:textSize="16dp" />
+
+    <Button
+        android:id="@+id/buttonAdd"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:background="@drawable/ic_add"
+        android:textColor="#070707"
+        android:textSize="8dp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/GioHang_ThanhTien"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="#0B0A0A"
+        android:textSize="16dp"
+        android:layout_weight="4"
+        android:textAlignment="textEnd"/>
+
+
+</LinearLayout>

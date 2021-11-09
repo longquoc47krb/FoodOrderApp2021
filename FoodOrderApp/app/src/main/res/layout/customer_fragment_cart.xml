@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/topAppBar"
+            style="@style/ToolbarTheme"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:navigationIcon="@drawable/ic_baseline_menu_24"
+            app:title="Giỏ hàng"
+            app:titleTextAppearance="@style/ToolbarTheme"
+            app:titleTextColor="#fff" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/view2"
+        tools:layout_editor_absoluteX="0dp">
+
+        <ListView
+            android:id="@+id/listGioHang"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginHorizontal="32dp"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="8dp"
+            tools:ignore="MissingConstraints">
+
+        </ListView>
+        <TextView
+            android:id="@+id/emptyText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Bạn chưa có gì trong giỏ hàng cả!"
+            android:textColor="@color/colorPrimary"
+            android:layout_margin="16dp"/>
+
+        <TextView
+            android:id="@+id/txtTongTien"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_margin="16dp"
+            android:text="Tổng cộng : 0đ"
+            android:textAlignment="textEnd"
+            android:textColor="@color/black"
+            android:textSize="19dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:text="Khách hàng:"
+        android:textColor="#090808"
+        android:textSize="22dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appbar"
+        tools:ignore="MissingConstraints" />
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:text="Nhà hàng:"
+        android:textColor="#090808"
+        android:textSize="22dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="26dp"
+        android:text="Địa chỉ:"
+        android:textColor="#090909"
+        android:textSize="22dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/edtTenKH_Giohang"
+        android:layout_width="220dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="46dp"
+        android:text="TextView"
+        android:textColor="@color/item_color_inactive"
+        android:paddingHorizontal="16dp"
+        android:background="@drawable/textbox_outline"
+        android:ems="10"
+        android:textSize="20dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/appbar"
+        tools:ignore="MissingConstraints"
+        android:enabled="false"/>
+    <EditText
+        android:id="@+id/edtTenNH_Giohang"
+        android:layout_width="220dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="46dp"
+        android:text="TextView"
+        android:textColor="@color/item_color_inactive"
+        android:paddingHorizontal="16dp"
+        android:background="@drawable/textbox_outline"
+        android:ems="10"
+        android:textSize="20dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/edtTenKH_Giohang"
+        tools:ignore="MissingConstraints"
+        android:enabled="false"/>
+
+    <EditText
+        android:id="@+id/edtSDT_Giohang"
+        android:layout_width="220dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginRight="8dp"
+        android:text="TextView"
+        android:textColor="@color/black"
+        android:paddingHorizontal="16dp"
+        android:inputType="number"
+        android:background="@drawable/textbox_outline"
+        android:ems="10"
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/edtTenNH_Giohang"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/edtDiaChi_giohang"
+        android:layout_width="220dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginLeft="96dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginRight="8dp"
+        android:text="TextView"
+        android:textColor="@color/black"
+        android:paddingHorizontal="16dp"
+        android:background="@drawable/textbox_outline"
+        android:ems="10"
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/edtSDT_Giohang"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="22dp"
+        android:text="Số điện thoại:"
+        android:textColor="#090909"
+        android:textSize="22dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        tools:ignore="MissingConstraints" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@+id/edtDiaChi_giohang"
+        tools:layout_editor_absoluteX="32dp" />
+
+    <Button
+        android:id="@+id/buttonXoaGioHang"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/btn"
+        android:text="Xóa giỏ hàng"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonXacNhanDonHang"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/buttonXacNhanDonHang"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/btn"
+        android:text="Xác nhận đơn hàng"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:ignore="MissingConstraints" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

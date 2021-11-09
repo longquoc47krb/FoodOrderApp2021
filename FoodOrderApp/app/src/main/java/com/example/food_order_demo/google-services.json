@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "854409153201",
+    "firebase_url": "https://food-order-app-hcmute-default-rtdb.firebaseio.com",
+    "project_id": "food-order-app-hcmute",
+    "storage_bucket": "food-order-app-hcmute.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:854409153201:android:da2db2dd0e56cd3714f090",
+        "android_client_info": {
+          "package_name": "com.example.food_order_demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "854409153201-1mdp66pvenu020dm2nb1ghuvis95605u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3MBJW0lIeaZre3Bpviguijd75vmZRMQo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "854409153201-1mdp66pvenu020dm2nb1ghuvis95605u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

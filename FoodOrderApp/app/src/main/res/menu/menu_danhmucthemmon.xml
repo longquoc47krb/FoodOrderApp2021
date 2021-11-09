@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="ăn vặt"
+        android:id="@+id/anvat"/>
+    <item android:title="Bữa tối"
+        android:id="@+id/buatoi"/>
+    <item android:title="Bữa sáng"
+        android:id="@+id/buasang"/>
+    <item android:title="Bữa trưa"
+        android:id="@+id/buatrua"/>
+    <item android:title="Bữa khuya"
+        android:id="@+id/buakhuya"/>
+    <item android:title="Bữa phụ"
+        android:id="@+id/buaphu"/>
+
+</menu>

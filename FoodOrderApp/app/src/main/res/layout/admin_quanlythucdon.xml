@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/quanlythucdon"
+    android:background="#ffff">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        tools:ignore="MissingConstraints">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Quản lý thực đơn"
+            app:titleTextAppearance="@style/ToolbarTheme"
+            android:background="@color/colorPrimary"
+            app:titleTextColor="#fff"
+            app:navigationIcon="@drawable/ic_baseline_arrow_back"
+            style="@style/ToolbarTheme"
+            />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="126dp"
+        android:background="@drawable/btn"
+        tools:ignore="MissingConstraints"
+        android:text="Thêm"/>
+
+    <ListView
+        android:id="@+id/listviewquanlymonan"
+        android:layout_width="match_parent"
+        android:layout_height="476dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="217dp"
+        android:background="@color/white" />
+</androidx.constraintlayout.widget.ConstraintLayout>

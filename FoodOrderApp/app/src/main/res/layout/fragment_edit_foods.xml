@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".quanlythucdon.EditFoodsFragment"
+    android:background="#fff">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="14"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ProgressBar
+            android:id="@+id/login_progress"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="124dp"
+            tools:layout_editor_absoluteY="118dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <TextView
+                    android:id="@+id/txtNameFood"
+                    android:layout_width="170dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="0dp"
+                    android:layout_weight="4"
+                    android:height="35dp"
+                    android:text="Tên món ăn"
+                    android:textColor="#333"
+                    android:textSize="17dp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:textColor="@color/black"
+                    android:paddingHorizontal="16dp"
+                    android:id="@+id/edtNameFood"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="6"
+                    android:background="@drawable/textbox_outline"
+                    android:ems="12"
+                    android:inputType="textPersonName"
+                    android:text=""
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <TextView
+                    android:id="@+id/txtNameImg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="30dp"
+                    android:layout_weight="4"
+                    android:height="35dp"
+                    android:text="Hình Ảnh"
+                    android:textColor="#333"
+                    android:textSize="17dp"
+                    android:textStyle="bold" />
+                <ImageView
+                    android:id="@+id/imgFood"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/foodimg"/>
+
+                <Button
+                    android:id="@+id/btnChooseImage"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/ic_image"
+                    android:backgroundTint="@color/colorPrimary" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <TextView
+                    android:id="@+id/txtNameGiaban"
+                    android:layout_width="138dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="30dp"
+                    android:layout_weight="4"
+                    android:height="35dp"
+                    android:text="Giá Bán"
+                    android:textColor="#333"
+                    android:textSize="17dp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:textColor="@color/black"
+                    android:paddingHorizontal="16dp"
+                    android:id="@+id/edtNameGiaban"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+
+                    android:layout_gravity="center"
+                    android:layout_weight="6"
+                    android:background="@drawable/textbox_outline"
+                    android:ems="12"
+                    android:inputType="number"
+                    android:text=""
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <TextView
+                    android:id="@+id/txtNameMoTa"
+                    android:layout_width="156dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="4"
+                    android:height="35dp"
+                    android:text="Mô tả"
+                    android:textColor="#333"
+                    android:textSize="17dp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:textColor="@color/black"
+                    android:paddingHorizontal="16dp"
+                    android:id="@+id/edtNameMoTa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+
+                    android:layout_gravity="center"
+                    android:layout_weight="6"
+                    android:background="@drawable/textbox_outline"
+                    android:ems="12"
+                    android:inputType="textPersonName"
+                    android:text=""
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <TextView
+                    android:id="@+id/txtNameDanhMuc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3.5"
+                    android:height="35dp"
+                    android:text="Danh mục"
+                    android:textColor="#333"
+                    android:textSize="17dp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:textColor="@color/black"
+                    android:paddingHorizontal="16dp"
+                    android:spinnerMode="dropdown"
+                    android:id="@+id/spnCategory"
+                    android:layout_width="200dp"
+                    android:layout_marginStart="30dp"
+                    android:background="@drawable/textbox_outline"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="298dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnSuaMonAn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn"
+                    android:text="Sửa"
+                    android:textColor="#fff"
+                    android:textColorHighlight="#AC5B5B"
+                    android:textSize="20dp" />
+
+                <Button
+                    android:id="@+id/btnXoa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn"
+                    android:text="Xóa"
+                    android:textColor="#fff"
+                    android:textColorHighlight="#AC5B5B"
+                    android:textSize="20dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

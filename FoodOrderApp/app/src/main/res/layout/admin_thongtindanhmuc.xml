@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+    android:background="#ffff">
+
+
+    <LinearLayout
+        android:layout_marginVertical="50dp"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="8"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="139dp"
+            android:layout_height="47dp"
+            android:text="Tên danh mục:"
+            android:textColor="#090909"
+            android:textSize="20dp"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="10dp"
+            tools:layout_editor_absoluteY="92dp" />
+
+        <EditText
+            android:id="@+id/edtTenDanhMuc"
+            android:layout_width="215dp"
+            android:layout_height="37dp"
+            android:background="@drawable/textbox_outline"
+            android:ems="10"
+            android:inputType="textPersonName"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="172dp"
+            tools:layout_editor_absoluteY="92dp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:layout_weight="2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <Button
+            android:layout_marginHorizontal="30dp"
+            android:id="@+id/btnSuaDanhMuc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn"
+            android:text="Sửa"
+            android:textSize="18sp"
+            app:backgroundTint="@color/colorPrimary"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="84dp"
+            tools:layout_editor_absoluteY="236dp" />
+
+        <Button
+            android:layout_marginHorizontal="30dp"
+            android:id="@+id/btnXoaDanhMuc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn"
+            android:text="Xoá"
+            android:textSize="18sp"
+            app:backgroundTint="@color/colorPrimary"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="237dp"
+            tools:layout_editor_absoluteY="236dp" />
+    </LinearLayout>
+
+
+
+</LinearLayout>

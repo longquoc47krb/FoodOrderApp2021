@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="8dp"
+    android:background="#FFF"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:background="@color/white"
+        android:layout_margin="1dp">
+        <ImageView
+            android:id="@+id/FoodImage"
+            android:layout_width="80dp"
+            android:layout_height="60dp"
+            android:src="@drawable/xucxich"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.9"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/txtFoodName"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:gravity="center_horizontal"
+                android:padding="5dp"
+                android:text="Xúc xích"
+                android:textColor="#FF000000" />
+
+            <TextView
+                android:id="@+id/txtDanhMuc"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:gravity="center_horizontal"
+                android:padding="5dp"
+                android:text="Xúc xích"
+                android:textSize="10dp"
+                android:textColor="@color/item_color_inactive"/>
+        </LinearLayout>
+
+
+        <TextView
+            android:text="10,000đ"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:id="@+id/txtPrice"
+            android:layout_weight="0.1"
+            android:gravity="center_vertical|right"
+            android:padding="5dp"
+            android:textColor="#FF000000"/>
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

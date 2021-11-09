@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/quanlythucdon"
+    tools:context=".quanlythucdon.FoodsFragment"
+    android:orientation="vertical"
+    android:background="#ffff">
+
+    <ListView
+        android:layout_marginTop="40dp"
+        android:id="@+id/listviewquanlymonan"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="217dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="Quán ăn hiện không có món ăn nào cả"
+        android:textColor="@color/colorPrimary"
+        android:id="@+id/empty"
+        />
+
+    <Button
+        android:id="@+id/btnTMA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn"
+        android:text="Thêm"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="126dp" />
+
+</LinearLayout>
