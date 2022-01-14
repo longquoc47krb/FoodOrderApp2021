@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.food_order_demo.R;
+import com.example.food_order_demo.common.Common;
 import com.example.food_order_demo.model.CartItem;
 
 import java.util.List;
@@ -68,7 +69,7 @@ public class CartItemAdapter extends BaseAdapter {
 
         holder.txtSL.setText(food.getSoLuong()+"");
         holder.txtTen.setText(food.getFoodName());
-        holder.txtGia.setText(food.getPrice());
+        holder.txtGia.setText(Common.printCurrency(Double.parseDouble(food.getPrice())));
 
         return convertView;
     }

@@ -21,6 +21,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.example.food_order_demo.R;
 import com.example.food_order_demo.adapter.CartItemAdapter;
+import com.example.food_order_demo.common.Common;
 import com.example.food_order_demo.model.CartItem;
 import com.example.food_order_demo.model.Builder.Request;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -73,7 +74,7 @@ public class AdminChiTietDonHang extends AppCompatActivity {
         txtName.setText( currentReq.getName());
         txtSdt.setText(currentReq.getPhone());
         txtDiachi.setText( currentReq.getAddress());
-        txtTongTien.setText("Tổng tiền: " + currentReq.getTotal());
+        txtTongTien.setText("Tổng tiền: " + Common.printCurrency(Double.parseDouble(currentReq.getTotal())));
         ArrayAdapter<CharSequence> arrayAdapter = ArrayAdapter.createFromResource(this, R.array.trangthaiDH, R.layout.spinner_item);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(arrayAdapter);

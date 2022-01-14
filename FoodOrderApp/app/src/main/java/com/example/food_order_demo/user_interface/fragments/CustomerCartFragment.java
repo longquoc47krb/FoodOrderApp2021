@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.food_order_demo.R;
 import com.example.food_order_demo.adapter.CartItemInCartAdapter;
+import com.example.food_order_demo.common.Common;
 import com.example.food_order_demo.model.Builder.IRequestBuilder;
 import com.example.food_order_demo.model.Builder.NewRequestBuilder;
 import com.example.food_order_demo.model.Builder.Request;
@@ -70,7 +71,7 @@ public class CustomerCartFragment extends Fragment {
         txtTen.setText(name);
         txtDiaChi.setText(diachi);
         txtSDT.setText(sdt);
-        txtTongTien.setText("Tổng tiền : "+ tongtien+"đ");
+        txtTongTien.setText("Tổng tiền : "+ Common.printCurrency(Double.parseDouble(tongtien)));
         txtNhaHang.setText(nhahang);
 
         TextView empty = view.findViewById(R.id.emptyText);

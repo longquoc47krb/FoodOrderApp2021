@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.food_order_demo.R;
+import com.example.food_order_demo.common.Common;
 import com.example.food_order_demo.model.CartItem;
 import com.example.food_order_demo.model.Singleton.Singleton;
 
@@ -69,7 +70,7 @@ public class CartItemInCartAdapter extends BaseAdapter {
 
         holder.txtTen.setText(cartItem.getFoodName());
         holder.txtSL.setText(cartItem.getSoLuong()+"");
-        holder.txtTongTien.setText(cartItem.getPrice());
+        holder.txtTongTien.setText(Common.printCurrency(Double.parseDouble(cartItem.getPrice())));
 
         holder.btnSub.setOnClickListener(v -> {
             int sl = Singleton.getInstance().getCurrentCart().getCartItemList().get(position).getSoLuong();

@@ -18,6 +18,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.food_order_demo.R;
 import com.example.food_order_demo.adapter.FoodAdapter;
+import com.example.food_order_demo.common.Common;
 import com.example.food_order_demo.model.Foods;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -137,7 +138,7 @@ public class FoodsFragment extends Fragment implements View.OnClickListener{
                 Bundle bundle = new Bundle();
                 bundle.putString("foodID",foods.get(position).getFoodID());
                 bundle.putString("foodName",foods.get(position).getFoodName());
-                bundle.putString("foodPrice",foods.get(position).getPrice());
+                bundle.putString("foodPrice", foods.get(position).getPrice());
                 bundle.putString("foodDescription",foods.get(position).getDescription());
                 bundle.putString("foodCategory",foods.get(position).getCategory());
                 bundle.putString("foodImage",foods.get(position).getFoodImage());

@@ -1,15 +1,16 @@
 {
   "project_info": {
     "project_number": "1048448043968",
+    "firebase_url": "https://food-order-2021-default-rtdb.firebaseio.com",
     "project_id": "food-order-2021",
     "storage_bucket": "food-order-2021.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1048448043968:android:851c57ced7154c98e15625",
+        "mobilesdk_app_id": "1:1048448043968:android:74d996c29af6f705e15625",
         "android_client_info": {
-          "package_name": "com.hcmute.foodorder2021"
+          "package_name": "com.example.food_order_demo"
         }
       },
       "oauth_client": [

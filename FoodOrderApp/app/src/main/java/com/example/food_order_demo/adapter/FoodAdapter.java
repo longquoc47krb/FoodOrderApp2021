@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.food_order_demo.Interface.ItemClickListener;
 import com.example.food_order_demo.R;
+import com.example.food_order_demo.common.Common;
 import com.example.food_order_demo.model.Foods;
 
 import java.util.ArrayList;
@@ -54,7 +55,7 @@ public class FoodAdapter extends BaseAdapter {
 
         txtName.setText(food.getFoodName());
         if (food.getPrice() != null)
-            txtGia.setText(food.getPrice() + "đ");
+            txtGia.setText(Common.printCurrency(Double.parseDouble(food.getPrice())));
         else
             txtGia.setText("0đ");
         txtDanhMuc.setText(food.getCategory());
